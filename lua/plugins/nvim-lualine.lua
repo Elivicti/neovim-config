@@ -1,3 +1,7 @@
+local function get_time()
+	return os.date("%H:%M:%S", os.time())
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	url = "git@github.com:nvim-lualine/lualine.nvim",
@@ -18,10 +22,16 @@ return {
 		sections = {
 			lualine_b = { "branch", "diff" },
 			lualine_x = {
-				"filesize",
 				"encoding",
 				"filetype",
 			},
+			lualine_y = {
+				-- "location",
+				"progress",
+			},
+			lualine_z = {
+				get_time
+			}
 		},
 	},
 }
