@@ -4,7 +4,7 @@ return {
 	build = ":TSUpdate", -- force update parser
 	opts = {
 		ensure_installed = {
-			"lua", "c", "cpp", "python", "vimdoc"
+			"lua", "c", "cpp", "python", "vimdoc", "markdown",
 		},
 		highlight = { enable = true }
 	},
