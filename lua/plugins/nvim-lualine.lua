@@ -1,5 +1,5 @@
 local function get_time()
-	return os.date("%H:%M:%S", os.time())
+	return os.date("%H:%M", os.time())
 end
 
 return {
