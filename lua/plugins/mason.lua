@@ -32,6 +32,7 @@ return {
 			if not package:is_installed() then
 				package:install()
 			end
+			config.capabilities = require("blink.cmp").get_lsp_capabilities()
 			lspconfig[lsp_name_map[name]].setup(config)
 		end
 
