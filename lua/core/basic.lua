@@ -11,6 +11,10 @@ vim.opt.autoread       = true  -- auto reload file if it's modified by other pro
 vim.opt.splitbelow     = false -- if horizontal split window should show below current window
 vim.opt.splitright     = true  -- if vertical split window should show right to current window
 
+vim.opt.ignorecase     = true  -- ignore case when search
+vim.opt.smartcase      = true  -- if input contains upper case and lower case, case is not ignored
+vim.opt.showmode       = false -- show current mode, we have lualine to do that
+vim.opt.scrolloff = 5
 
 -- restore cursor style when exiting vim
 vim.cmd([[
