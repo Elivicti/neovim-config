@@ -15,7 +15,7 @@ return {
     },
 	event = "VeryLazy",
 	opts = {
-	options = {
+		options = {
 			theme = "auto",
 			component_separators = { left = "", right = "" },
 			section_separators   = { left = "", right = "" },
