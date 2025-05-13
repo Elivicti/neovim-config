@@ -24,14 +24,14 @@ return {
 				local indicator = {}
 				for level, count in pairs(diagnostics_dict) do
         			if diagnostic_icons[level] and count > 0 then
-           				table.insert(indicator, ("%s%%#%s#%d%s%%*"):format(
+						table.insert(indicator, ("%s%%#%s#%d%s%%*"):format(
                 			" ",
 							diagnostic_icons[level].hl,
 							count,
 							diagnostic_icons[level].icon
             			))
         			end
-   				end
+				end
     			return #indicator > 0 and table.concat(indicator) or ""
 			end
 		}
@@ -41,10 +41,11 @@ return {
 		{ "<A-n>",      ":BufferLineCycleNext<CR>",   silent = true },
 		{ "<leader>bh", ":BufferLineCyclePrev<CR>",   silent = true }, -- move to previous tab
 		{ "<leader>bl", ":BufferLineCycleNext<CR>",   silent = true }, -- move to next tab
-		{ "<leader>bd", ":bdelete<CR>",               silent = true }, -- close current tab
+		{ "<leader>bq", ":bdelete<CR>",               silent = true }, -- close current tab
 		{ "<leader>bo", ":BufferLineCloseOthers<CR>", silent = true }, -- close other tabs
 		{ "<leader>bp", ":BufferLinePick<CR>",        silent = true }, -- switch to a certain tab
-		{ "<leader>bc", ":BufferLinePickClose<CR>",   silent = true }, -- exit pick mode
+		{ "<leader>bb", ":BufferLinePick<CR>",        silent = true }, -- switch to a certain tab
+		{ "<leader>bd", ":BufferLinePickClose<CR>",   silent = true }, -- exit pick mode
 	},
 	lazy = false -- disable lazy load
 }
