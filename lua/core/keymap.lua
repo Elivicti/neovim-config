@@ -8,7 +8,7 @@ vim.keymap.set("i", "<C-x>", "<Esc>ddi", { silent = true }) -- execute "dd" in i
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<Cmd>write<CR><Esc>", { })
 
 -- open terminal mode, the tailing `i` is needed
-vim.keymap.set("n", "<C-t>", "<Cmd>terminal<CR>i", { silent = true })
+vim.keymap.set("n", "<A-t>", "<Cmd>terminal<CR>i", { silent = true })
 
 
 local opts = { noremap = true, silent = true }
