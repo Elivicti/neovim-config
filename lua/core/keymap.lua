@@ -4,9 +4,6 @@ vim.keymap.set({ "n", "i", "v" }, "<C-r>", "<Cmd>redo<CR>", { silent = true })
 -- vim.keymap.set({ "n", "i" }, "<C-x>", "dd", { silent = true })
 
 
-vim.keymap.set("n", "j", "k", { remap = false }) -- swap up and down
-vim.keymap.set("n", "k", "j", { remap = false })
-
 vim.keymap.set({ "n", "i" }, "<C-s>", "<Cmd>write<CR><Esc>", { })
 
 -- open terminal mode, the tailing `i` is needed
