@@ -1,5 +1,6 @@
 return {
 	"folke/tokyonight.nvim",
+	url = "git@github.com:folke/tokyonight.nvim",
 	opts = {
 		style = "night",
 	},
