@@ -33,4 +33,4 @@ local function set_colorscheme(scheme)
 	scheme.config()
 end
 
-set_colorscheme(color_schemes.vscode)
+set_colorscheme(color_schemes.tokyonight)
