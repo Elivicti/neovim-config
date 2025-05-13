@@ -1,13 +1,13 @@
 return {
-	"williamboman/mason.nvim",
-	url = "git@github.com:williamboman/mason.nvim",
+	"mason-org/mason.nvim",
+	url = "git@github.com:mason-org/mason.nvim",
 	dependencies = {
 		{
 			"neovim/nvim-lspconfig",
 			url = "git@github.com:neovim/nvim-lspconfig"
 		},
 		{
-			"williamboman/mason-lspconfig",
+			"mason-org/mason-lspconfig",
 			url = "git@github.com:williamboman/mason-lspconfig"
 		}
 	},
@@ -16,7 +16,7 @@ return {
 	config = function (_, opts)
 		require("mason").setup(opts)
 		local registry     = require("mason-registry")
-		local lsp_name_map = require("mason-lspconfig.mappings.server").package_to_lspconfig
+		local lsp_name_map = require("mason-lspconfig").get_mappings().package_to_lspconfig
 		local lspconfig    = require("lspconfig")
 
 		local function setup_lsp(name, config)
