@@ -2,6 +2,8 @@ local function get_time()
 	return os.date("%H:%M", os.time())
 end
 
+local components = require("configs.lualine-components")
+
 return {
 	"nvim-lualine/lualine.nvim",
 	url = "git@github.com:nvim-lualine/lualine.nvim",
@@ -21,6 +23,13 @@ return {
 		extensions = { "nvim-tree" },
 		sections = {
 			lualine_b = { "branch", "diff" },
+			lualine_c = {
+				components.filename,
+				components.cmake.configure_preset,
+				components.cmake.build_target,
+				components.cmake.debug,
+				components.cmake.launch
+			},
 			lualine_x = {
 				"encoding",
 				"filetype",
@@ -33,6 +42,18 @@ return {
 				get_time
 			}
 		},
+
+		-- winbar = {
+		-- 	lualine_x = {
+		-- 		components.cmake.launch,
+		-- 		components.cmake.debug,
+		-- 	},
+		-- 	lualine_y = {
+		-- 		components.cmake.build_target
+		-- 	},
+		-- 	lualine_z = {
+		-- 		components.cmake.configure_preset,
+		-- 	},
+		-- }
 	},
 }
-
