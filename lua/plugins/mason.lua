@@ -24,7 +24,7 @@ return {
 			if not success then
 				vim.api.nvim_echo({
 					{ "Failed to setup lsp: " .. name .. "\n", "ErrorMsg" },
-					{ package, "ErrorMsg" },
+					{ vim.inspect(package), "ErrorMsg" },
 					{ "\n" },
 				}, true, {})
 				return
@@ -32,7 +32,12 @@ return {
 			if not package:is_installed() then
 				package:install()
 			end
-			config.capabilities = require("blink.cmp").get_lsp_capabilities()
+			local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
+			config = vim.tbl_deep_extend("force", config, {
+				capabilities = blink_capabilities,
+			})
+
+			lspconfig[lsp_name_map[name]].setup(config) -- somehow needs to call setup twice???
 			lspconfig[lsp_name_map[name]].setup(config)
 		end
 
@@ -61,7 +66,6 @@ return {
 			setup_lsp(lsp, config)
 		end
 
-		vim.cmd("LspStart")
 		vim.diagnostic.config({
 			virtual_text     = true, -- show warning or error message
 			virtual_lines    = true, -- show warning or error message in mutiple lines
