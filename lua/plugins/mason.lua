@@ -1,3 +1,28 @@
+local language_servers = {
+	["lua-language-server"] = {
+		settings = {
+			Lua = {
+				diagnostics = { globals = { "vim" }, },
+				workspace = {
+					-- make lsp aware of nvim runtime files
+					library = vim.api.nvim_get_runtime_file("", true),
+				}
+			}
+		}
+	},
+	pyright = {},
+	["cmake-language-server"] = {},
+	clangd = {
+		cmd = {
+			"clangd",
+			"--compile-commands-dir="  .. vim.fn.getcwd() .. "/build/",
+			"--header-insertion=never",
+			"--background-index"
+		},
+		filetypes = { "c", "cpp", "objc", "objcpp" }
+	}
+}
+
 return {
 	"mason-org/mason.nvim",
 	url = "git@github.com:mason-org/mason.nvim",
@@ -41,35 +66,14 @@ return {
 			lspconfig[lsp_name_map[name]].setup(config)
 		end
 
-		local language_servers = {
-			["lua-language-server"] = {
-				settings = {
-        			Lua = {
-            			diagnostics = { globals = { "vim" }, },
-        			}
-    			}
-			},
-			pyright = {},
-			["cmake-language-server"] = {},
-			clangd = {
-				cmd = {
-					"clangd",
-					"--compile-commands-dir="  .. vim.fn.getcwd() .. "/build/",
-					"--header-insertion=never",
-					"--background-index"
-				},
-				filetypes = { "c", "cpp", "objc", "objcpp" }
-			}
-		}
-
 		for lsp, config in pairs(language_servers) do
 			setup_lsp(lsp, config)
 		end
 
 		vim.diagnostic.config({
-			virtual_text     = true, -- show warning or error message
-			virtual_lines    = true, -- show warning or error message in mutiple lines
-			update_in_insert = true, -- update diagnostic when edited in insert mode
+			virtual_text     = true,  -- show warning or error message
+			virtual_lines    = false, -- show warning or error message in mutiple lines
+			update_in_insert = true,  -- update diagnostic when edited in insert mode
 		})
 	end
 }
