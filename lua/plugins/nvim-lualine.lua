@@ -37,7 +37,7 @@ return {
 					symbols = {
 						unix = "LF",
 						mac  = "CR",
-						dox  = "CRLF"
+						dos  = "CRLF"
 					}
 				},
 				"filetype",
