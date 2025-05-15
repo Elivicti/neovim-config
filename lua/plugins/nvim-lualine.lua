@@ -32,6 +32,14 @@ return {
 			},
 			lualine_x = {
 				"encoding",
+				{
+					"fileformat",
+					symbols = {
+						unix = "LF",
+						mac  = "CR",
+						dox  = "CRLF"
+					}
+				},
 				"filetype",
 			},
 			lualine_y = {
