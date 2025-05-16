@@ -11,6 +11,10 @@ vim.keymap.set({ "n", "i", "v" }, "<C-r>", "<Cmd>redo<CR>",     silent)
 vim.keymap.set({ "n", "i" },      "<C-x>", "<Cmd>norm dd<CR>",  silent)
 
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<Cmd>write<CR><Esc>", { })
+vim.keymap.set({ "n", "i", "v" }, "<C-S>", "<Cmd>wall<CR><Esc>",  { })
+
+vim.keymap.set("n", "<C-q>", "<Cmd>q<CR>",  {})
+vim.keymap.set("n", "<C-Q>", "<Cmd>qa<CR>", {})
 
 -- open terminal mode, the tailing `i` is needed
 vim.keymap.set("n", "<A-t>", "<Cmd>terminal<CR>i", silent)
