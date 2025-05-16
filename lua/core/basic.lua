@@ -26,7 +26,7 @@ vim.cmd([[
 ]])
 
 -- set default shell to powershell on windows
-if vim.fn.has("windows") then
+if jit.os == "Windows" then
 	if vim.fn.executable("pwsh") == 1 then
 		vim.opt.shell = "pwsh"
 	else
