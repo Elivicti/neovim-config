@@ -1,6 +1,5 @@
 return {
 	"Mofiqul/vscode.nvim.git",
-	url = "git@github.com:Mofiqul/vscode.nvim.git",
 	opts = {
 		style = "dark",
 	},

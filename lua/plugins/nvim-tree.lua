@@ -1,11 +1,7 @@
 return {
 	"nvim-tree/nvim-tree.lua",
-	url = "git@github.com:nvim-tree/nvim-tree.lua",
 	dependencies = {
-		{
-			"nvim-tree/nvim-web-devicons",
-			url = "git@github.com:nvim-tree/nvim-web-devicons"
-		}
+		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
 		sort = {

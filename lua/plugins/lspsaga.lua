@@ -1,16 +1,9 @@
 return {
 	"nvimdev/lspsaga.nvim",
-	url = "git@github.com:nvimdev/lspsaga.nvim",
 	cmd = "Lspsage",
 	dependencies = {
-		{
-			"nvim-treesitter/nvim-treesitter",
-			url = "git@github.com:nvim-treesitter/nvim-treesitter"
-		},
-		{
-			"nvim-tree/nvim-web-devicons",
-			url = "git@github.com:nvim-tree/nvim-web-devicons"
-		}
+		"nvim-treesitter/nvim-treesitter",
+		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
 		finder = {

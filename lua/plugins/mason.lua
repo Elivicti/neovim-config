@@ -25,16 +25,9 @@ local language_servers = {
 
 return {
 	"mason-org/mason.nvim",
-	url = "git@github.com:mason-org/mason.nvim",
 	dependencies = {
-		{
-			"neovim/nvim-lspconfig",
-			url = "git@github.com:neovim/nvim-lspconfig"
-		},
-		{
-			"mason-org/mason-lspconfig",
-			url = "git@github.com:williamboman/mason-lspconfig"
-		}
+		"neovim/nvim-lspconfig",
+		"mason-org/mason-lspconfig",
 	},
 	event = "VeryLazy",
 	opts = {},

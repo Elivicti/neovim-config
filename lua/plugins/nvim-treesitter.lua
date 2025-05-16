@@ -1,6 +1,5 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	url = "git@github.com:nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate", -- force update parser
 	opts = {
 		ensure_installed = {

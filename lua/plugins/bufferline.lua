@@ -7,14 +7,9 @@ local diagnostic_icons = {
 
 return {
     "akinsho/bufferline.nvim",
-	url = "git@github.com:akinsho/bufferline.nvim",
     dependencies = {
-    	{
-			"nvim-tree/nvim-web-devicons",
-			url = "git@github.com:nvim-tree/nvim-web-devicons"
-		}
+		"nvim-tree/nvim-web-devicons",
 	},
-
 	opts = {
 		options = {
 			diagnostics = "nvim_lsp",

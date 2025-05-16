@@ -2,7 +2,6 @@
 
 return {
 	"saghen/blink.cmp",
-	url = "git@github.com:saghen/blink.cmp",
 	version = "*",
 	event = "VeryLazy",
 	opts = {

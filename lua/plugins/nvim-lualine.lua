@@ -2,12 +2,8 @@ local components = require("configs.lualine-components")
 
 return {
 	"nvim-lualine/lualine.nvim",
-	url = "git@github.com:nvim-lualine/lualine.nvim",
 	dependencies = {
-		{
-			"nvim-tree/nvim-web-devicons",
-			url = "git@github.com:nvim-tree/nvim-web-devicons"
-		},
+		"nvim-tree/nvim-web-devicons",
     },
 	event = "VeryLazy",
 	opts = {
