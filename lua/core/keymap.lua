@@ -1,29 +1,30 @@
+-- needed for plugin keymaps
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
-vim.keymap.set({ "n", "i", "v" }, "<C-z>", "<Cmd>undo<CR>", { silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<C-r>", "<Cmd>redo<CR>", { silent = true })
-vim.keymap.set("n", "<C-x>",      "dd",  { silent = true })
-vim.keymap.set("i", "<C-x>", "<Esc>ddi", { silent = true }) -- execute "dd" in insert mode
+local silent  = { silent = true }
+local noremap = { silent = true, noremap = true }
+
+
+vim.keymap.set({ "n", "i", "v" }, "<C-z>", "<Cmd>undo<CR>", silent)
+vim.keymap.set({ "n", "i", "v" }, "<C-r>", "<Cmd>redo<CR>", silent)
+vim.keymap.set("n", "<C-x>",      "dd",  silent)
+vim.keymap.set("i", "<C-x>", "<Esc>ddi", silent) -- execute "dd" in insert mode
 
 
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<Cmd>write<CR><Esc>", { })
 
 -- open terminal mode, the tailing `i` is needed
-vim.keymap.set("n", "<A-t>", "<Cmd>terminal<CR>i", { silent = true })
+vim.keymap.set("n", "<A-t>", "<Cmd>terminal<CR>i", silent)
 
-
-local opts = { noremap = true, silent = true }
 
 -- swap Ctrl+Arrow and Shift+Arrow
-vim.keymap.set({ "n", "v" }, "<S-Left>",  "<C-Left>",  opts)
-vim.keymap.set({ "n", "v" }, "<S-Right>", "<C-Right>", opts)
-vim.keymap.set({ "n", "v" }, "<S-Up>",    "<C-Up>",    opts)
-vim.keymap.set({ "n", "v" }, "<S-Down>",  "<C-Down>",  opts)
+vim.keymap.set({ "n", "v" }, "<S-Left>",  "<C-Left>",  noremap)
+vim.keymap.set({ "n", "v" }, "<S-Right>", "<C-Right>", noremap)
+vim.keymap.set({ "n", "v" }, "<S-Up>",    "<C-Up>",    noremap)
+vim.keymap.set({ "n", "v" }, "<S-Down>",  "<C-Down>",  noremap)
 --
-vim.keymap.set({ "n", "v" }, "<C-Left>",  "<S-Left>",  opts)
-vim.keymap.set({ "n", "v" }, "<C-Right>", "<S-Right>", opts)
-vim.keymap.set({ "n", "v" }, "<C-Up>",    "<S-Up>",    opts)
-vim.keymap.set({ "n", "v" }, "<C-Down>",  "<S-Down>",  opts)
-
--- needed for plugin keymaps
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.keymap.set({ "n", "v" }, "<C-Left>",  "<S-Left>",  noremap)
+vim.keymap.set({ "n", "v" }, "<C-Right>", "<S-Right>", noremap)
+vim.keymap.set({ "n", "v" }, "<C-Up>",    "<S-Up>",    noremap)
+vim.keymap.set({ "n", "v" }, "<C-Down>",  "<S-Down>",  noremap)

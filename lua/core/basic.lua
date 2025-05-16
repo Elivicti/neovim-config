@@ -13,6 +13,7 @@ vim.opt.splitright     = true  -- if vertical split window should show right to 
 
 vim.opt.ignorecase     = true  -- ignore case when search
 vim.opt.smartcase      = true  -- if input contains upper case and lower case, case is not ignored
+
 vim.opt.showmode       = false -- show current mode, we have lualine to do that
 vim.opt.scrolloff      = 5
 
