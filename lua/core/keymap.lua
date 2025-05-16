@@ -23,13 +23,13 @@ vim.keymap.set("v", "<C-c>", '"+y',  silent)
 vim.keymap.set({ "n", "i" }, "<C-_>", "<Cmd>norm gcc<CR>", noremap)
 vim.keymap.set("v",          "<C-_>", "<Cmd>norm gc<CR>",  noremap)
 
--- swap Ctrl+Arrow and Shift+Arrow
+-- swap Ctrl+left/right and Shift+left/right
 vim.keymap.set({ "n", "v" }, "<S-Left>",  "<C-Left>",  noremap)
 vim.keymap.set({ "n", "v" }, "<S-Right>", "<C-Right>", noremap)
-vim.keymap.set({ "n", "v" }, "<S-Up>",    "<C-Up>",    noremap)
-vim.keymap.set({ "n", "v" }, "<S-Down>",  "<C-Down>",  noremap)
 --
 vim.keymap.set({ "n", "v" }, "<C-Left>",  "<S-Left>",  noremap)
 vim.keymap.set({ "n", "v" }, "<C-Right>", "<S-Right>", noremap)
-vim.keymap.set({ "n", "v" }, "<C-Up>",    "<S-Up>",    noremap)
-vim.keymap.set({ "n", "v" }, "<C-Down>",  "<S-Down>",  noremap)
+
+-- Ctrl+up/down moves viewport up and down, keeping cursor unmoved
+vim.keymap.set({ "n", "v" }, "<C-Up>",    "<C-E>", noremap)
+vim.keymap.set({ "n", "v" }, "<C-Down>",  "<C-Y>", noremap)
