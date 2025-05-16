@@ -1,5 +1,5 @@
 return {
-	"Mofiqul/vscode.nvim.git",
+	"Mofiqul/vscode.nvim",
 	opts = {
 		style = "dark",
 	},
