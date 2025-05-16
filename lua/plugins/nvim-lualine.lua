@@ -1,7 +1,3 @@
-local function get_time()
-	return os.date("%H:%M", os.time())
-end
-
 local components = require("configs.lualine-components")
 
 return {
@@ -43,25 +39,12 @@ return {
 				"filetype",
 			},
 			lualine_y = {
-				-- "location",
 				"progress",
+				"location",
 			},
 			lualine_z = {
-				get_time
+				components.datetime
 			}
 		},
-
-		-- winbar = {
-		-- 	lualine_x = {
-		-- 		components.cmake.launch,
-		-- 		components.cmake.debug,
-		-- 	},
-		-- 	lualine_y = {
-		-- 		components.cmake.build_target
-		-- 	},
-		-- 	lualine_z = {
-		-- 		components.cmake.configure_preset,
-		-- 	},
-		-- }
 	},
 }

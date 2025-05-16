@@ -3,7 +3,7 @@ local icon = {
 	cmake = {
 		CMake = "",
 		Build = "",
-		Run = "",
+		Run   = "",
 		Debug = "",
 	},
 }
@@ -24,6 +24,11 @@ local components = {
 	filename = {
 		"filename",
 		cond = function() return not cmake_component_condition() end
+	},
+	datetime = {
+		function()
+			return os.date("%Y-%m-%d %H:%M", os.time())
+		end
 	},
 	cmake = {
 		configure_preset = {
