@@ -37,3 +37,7 @@ vim.keymap.set({ "n", "v" }, "<C-Right>", "<S-Right>", noremap)
 -- Ctrl+up/down moves viewport up and down, keeping cursor unmoved
 vim.keymap.set({ "n", "v" }, "<C-Up>",    "<C-E>", noremap)
 vim.keymap.set({ "n", "v" }, "<C-Down>",  "<C-Y>", noremap)
+
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
