@@ -20,7 +20,8 @@ local language_servers = {
 			"--background-index"
 		},
 		filetypes = { "c", "cpp", "objc", "objcpp" }
-	}
+	},
+	["json-lsp"] = {}
 }
 
 return {
