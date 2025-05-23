@@ -38,7 +38,7 @@ return {
 			},
 			lualine_y = {
 				"progress",
-				"location",
+				-- "location",
 			},
 			lualine_z = {
 				components.datetime
