@@ -1,5 +1,3 @@
-local components = require("configs.lualine-components")
-
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
@@ -13,7 +11,11 @@ return {
 			section_separators   = { left = "", right = "" },
 		},
 		extensions = { "nvim-tree" },
-		sections = {
+	},
+	config = function(_, opts)
+		local components = require("configs.lualine-components")
+
+		opts.sections = {
 			lualine_b = { "branch", "diff" },
 			lualine_c = {
 				components.filename,
@@ -41,6 +43,8 @@ return {
 			lualine_z = {
 				components.datetime
 			}
-		},
-	},
+		}
+
+		require("lualine").setup(opts)
+	end
 }

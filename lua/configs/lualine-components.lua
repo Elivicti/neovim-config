@@ -14,7 +14,6 @@ if not has_cmake then
 		is_cmake_project = function() return false end
 	}
 end
-local has_nvim_dap, _ = pcall(require, "dap")
 
 local cmake_component_condition = function()
 	return cmake.is_cmake_project() and vim.bo.buftype == ""
@@ -31,6 +30,17 @@ local components = {
 		end
 	},
 	cmake = {
+		configure_preset = {},
+		build_target = {},
+		debug = {},
+		launch = {},
+	}
+}
+
+-- only load cmake stuff when it's available and inside of a cmake project
+if has_cmake and cmake.is_cmake_project() then
+	local has_nvim_dap, _ = pcall(require, "dap")
+	components.cmake = {
 		configure_preset = {
 			function()
 				if cmake.has_cmake_preset() then
@@ -140,8 +150,8 @@ local components = {
 			end
 		}
 	}
-}
 
+end
 
 
 return components
