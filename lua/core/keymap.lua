@@ -42,6 +42,6 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- classic Ctrl+a to select all
-vim.keymap.set("n", "<C-a>", "ggvG$<CR>")
-vim.keymap.set("v", "<C-a>", "<Esc>ggvG$<CR>")
+vim.keymap.set("n", "<C-a>", "gg^vG$<CR>")
+vim.keymap.set("v", "<C-a>", "<Esc>gg^vG$<CR>")
 
