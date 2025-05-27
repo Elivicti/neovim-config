@@ -6,29 +6,28 @@ local diagnostic_icons = {
 }
 
 return {
-    "akinsho/bufferline.nvim",
-    dependencies = {
+	"akinsho/bufferline.nvim",
+	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
 		options = {
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(_, _, diagnostics_dict, _)
-    			if vim.tbl_isempty(diagnostics_dict) then return "" end
+				if vim.tbl_isempty(diagnostics_dict) then return "" end
 
 				local indicator = {}
 				for level, count in pairs(diagnostics_dict) do
-        			if diagnostic_icons[level] and count > 0 then
+					if diagnostic_icons[level] and count > 0 then
 						table.insert(indicator, ("%s%%#%s#%d%s%%*"):format(
-                			" ",
+							" ",
 							diagnostic_icons[level].hl,
 							count,
 							diagnostic_icons[level].icon
-            			))
-        			end
+						))
+					end
 				end
-    			return #indicator > 0 and table.concat(indicator) or ""
-			end
+				return #indicator > 0 and table.concat(indicator) or ""
 			end,
 			offsets = {
 				{
