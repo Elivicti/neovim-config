@@ -21,7 +21,8 @@ local language_servers = {
 		},
 		filetypes = { "c", "cpp", "objc", "objcpp" }
 	},
-	["json-lsp"] = {}
+	["json-lsp"] = {},
+	["bash-language-server"] = {},
 }
 
 return {
