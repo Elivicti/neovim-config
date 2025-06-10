@@ -16,6 +16,9 @@ vim.keymap.set({ "n", "i", "v" }, "<C-S>", "<Cmd>wall<CR><Esc>",  { })
 vim.keymap.set("n", "<C-q>", "<Cmd>q<CR>",  {})
 vim.keymap.set("n", "<C-Q>", "<Cmd>qa<CR>", {})
 
+-- rebind rectangular v mode
+vim.keymap.set("n", "vv", "<C-v>", noremap)
+
 -- open terminal mode, the tailing `i` is needed
 vim.keymap.set("n", "<A-t>", "<Cmd>terminal<CR>i", silent)
 
