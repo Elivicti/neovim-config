@@ -1,9 +1,9 @@
+local git_config = require("configs.git")
+
 -- usually ~/.local/share/nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "git@github.com:folke/lazy.nvim.git" -- using git ssh to clone
+	local lazyrepo = git_config.site.github:url("folke/lazy.nvim")
 	-- clone lazy nvim repo
 	local out = vim.fn.system({
 		"git", "clone", "--filter=blob:none", "--branch=stable",
@@ -26,6 +26,6 @@ require("lazy").setup({
 		{ import = "plugins" }
 	},
 	git = {
-		url_format = "git@github.com:%s.git"
+		url_format = git_config.site.github.format
 	}
 })

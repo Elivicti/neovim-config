@@ -1,6 +1,7 @@
+local git_config = require("configs.git")
 return {
 	"HiPhish/rainbow-delimiters.nvim.git",
-	url = "git@gitlab.com:HiPhish/rainbow-delimiters.nvim.git",
+	url = git_config.site.gitlab:url("HiPhish/rainbow-delimiters.nvim"),
 	opts = {
 		strategy = {
 			[''] = 'rainbow-delimiters.strategy.global',
@@ -21,3 +22,4 @@ return {
 		require("rainbow-delimiters.setup").setup(opts);
 	end
 }
+
