@@ -1,6 +1,6 @@
 local git_config = require("configs.git")
 return {
-	"HiPhish/rainbow-delimiters.nvim.git",
+	"HiPhish/rainbow-delimiters.nvim",
 	url = git_config.site.gitlab:url("HiPhish/rainbow-delimiters.nvim"),
 	opts = {
 		strategy = {
