@@ -16,10 +16,10 @@ end
 local url_type = string.lower(vim.g.NVIM_GIT_URL_TYPE or "ssh")
 local url_format_table = {
 	ssh = "git@%s.com:",
-	https = "https://%s/"
+	https = "https://%s.com/"
 }
 
-if not url_format_table[url_format_table] then
+if not url_format_table[url_type] then
 	url_type = "ssh"
 end
 local url_format = url_format_table[url_type]
