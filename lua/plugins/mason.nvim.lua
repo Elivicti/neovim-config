@@ -53,12 +53,16 @@ return {
 				package:install()
 			end
 			local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
-			config = vim.tbl_deep_extend("force", config, {
-				capabilities = blink_capabilities,
-			})
+			config = vim.tbl_deep_extend("force",
+				vim.lsp.config[lsp_name_map[name]],
+				config,
+				{ capabilities = blink_capabilities }
+			)
 
-			lspconfig[lsp_name_map[name]].setup(config) -- somehow needs to call setup twice???
+			lspconfig[lsp_name_map[name]].setup(config) -- somehow needs to call setup twice for lsp to auto start
 			lspconfig[lsp_name_map[name]].setup(config)
+
+			vim.lsp.config[lsp_name_map[name]] = config; -- somehow this is needed so that :LspRestart won't lost any params
 		end
 
 		for lsp, config in pairs(language_servers) do
