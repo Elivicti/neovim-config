@@ -26,5 +26,11 @@ local language_servers = {
 	["bash-language-server"] = {},
 }
 
+local has_opt, opt_ls = pcall(require, "configs.language-servers-opt")
+if not has_opt or (type(opt_ls) ~= "table") then
+	opt_ls = {}
+end
+
+vim.tbl_deep_extend("force", language_servers, opt_ls)
 
 return language_servers
