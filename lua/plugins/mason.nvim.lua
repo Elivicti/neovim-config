@@ -1,30 +1,3 @@
-local language_servers = {
-	["lua-language-server"] = {
-		settings = {
-			Lua = {
-				diagnostics = { globals = { "vim" }, },
-				workspace = {
-					-- make lsp aware of nvim runtime files
-					library = vim.api.nvim_get_runtime_file("", true),
-				}
-			}
-		}
-	},
-	pyright = {},
-	["cmake-language-server"] = {},
-	clangd = {
-		cmd = {
-			"clangd",
-			"--compile-commands-dir="  .. vim.fn.getcwd() .. "/build/",
-			"--header-insertion=never",
-			"--background-index"
-		},
-		filetypes = { "c", "cpp", "objc", "objcpp" }
-	},
-	["json-lsp"] = {},
-	["bash-language-server"] = {},
-}
-
 return {
 	"mason-org/mason.nvim",
 	dependencies = {
@@ -40,6 +13,9 @@ return {
 		local lspconfig    = require("lspconfig")
 
 		local function setup_lsp(name, config)
+			local lsp_name = lsp_name_map[name]
+			if not lsp_name then return end
+
 			local success, package = pcall(registry.get_package, name)
 			if not success then
 				vim.api.nvim_echo({
@@ -65,6 +41,7 @@ return {
 			vim.lsp.config[lsp_name_map[name]] = config; -- somehow this is needed so that :LspRestart won't lost any params
 		end
 
+		local language_servers = require("configs.language-servers")
 		for lsp, config in pairs(language_servers) do
 			setup_lsp(lsp, config)
 		end
