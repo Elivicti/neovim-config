@@ -17,8 +17,10 @@ return {
 	},
 	keys = {
 		{ "<leader>lr", "<Cmd>Lspsaga rename<CR>" },
-		{ "<leader>lc", "<Cmd>Lspsaga code_action<CR>" },
 		{ "<leader>ld", "<Cmd>Lspsaga goto_definition<CR>" },
-		{ "<leader>lk", "<Cmd>Lspsaga hover_doc<CR>" }
+		{ "<leader>lk", "<Cmd>Lspsaga hover_doc<CR>" },
+		{ "<leader>ll", "<Cmd>Lspsaga show_line_diagnostics<CR>" },
+		{ "<M-.>", "<Cmd>Lspsaga diagnostic_jump_next<CR>" },
+		{ "<M-,>", "<Cmd>Lspsaga diagnostic_jump_prev<CR>" },
 	}
 }
