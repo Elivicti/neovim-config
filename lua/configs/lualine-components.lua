@@ -73,7 +73,7 @@ if has_cmake and cmake.is_cmake_project() then
 		},
 		build_target = {
 			function()
-				local b_target = cmake.get_build_target()
+				local b_target = cmake.get_build_target()[1]
 				if not b_target or b_target == "all" then
 					return icon.cmake.Build
 				end
@@ -86,9 +86,9 @@ if has_cmake and cmake.is_cmake_project() then
 					local b_target = cmake.get_build_target()
 					local options = cmake.get_build_options()
 					if not b_target then
-						options.target = cmake.get_launch_target()
+						options.target = { cmake.get_launch_target() }
 						if not options.target then
-							options.target = "all"
+							options.target = { "all" }
 						end
 					else
 						options.target = b_target
