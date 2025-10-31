@@ -20,6 +20,7 @@ return {
 		{ "<leader>ld", "<Cmd>Lspsaga goto_definition<CR>" },
 		{ "<leader>lk", "<Cmd>Lspsaga hover_doc<CR>" },
 		{ "<leader>ll", "<Cmd>Lspsaga show_line_diagnostics<CR>" },
+		{ "<leader>la", "<Cmd>Lspsaga code_action<CR>" },
 		{ "<M-.>", "<Cmd>Lspsaga diagnostic_jump_next<CR>" },
 		{ "<M-,>", "<Cmd>Lspsaga diagnostic_jump_prev<CR>" },
 	}
