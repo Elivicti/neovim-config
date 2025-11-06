@@ -5,36 +5,42 @@ local diagnostic_icons = {
 	--hint    = { icon = "󰌶", hl = "BufferLineDiagnosticHint"  }
 }
 
+local git_config = require("configs.git")
+
 return {
 	"akinsho/bufferline.nvim",
+	url = git_config.site.github:url("Elivicti/bufferline.nvim"),
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
 		options = {
+			max_name_length = 20,
+			tab_size = 20,
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(_, _, diagnostics_dict, _)
 				if vim.tbl_isempty(diagnostics_dict) then return "" end
 
-				local indicator = {}
+				local indicators = ""
 				for level, count in pairs(diagnostics_dict) do
-					if diagnostic_icons[level] and count > 0 then
-						table.insert(indicator, ("%s%%#%s#%d%s%%*"):format(
-							" ",
-							diagnostic_icons[level].hl,
-							count,
-							diagnostic_icons[level].icon
-						))
+					if not (diagnostic_icons[level] and count > 0) then
+						goto continue
 					end
+					indicators = indicators .. string.format(
+						" %%#%s#%s%d%%*",
+						diagnostic_icons[level].hl,
+						diagnostic_icons[level].icon, count
+					)
+					::continue::
 				end
-				return #indicator > 0 and table.concat(indicator) or ""
+				return indicators
 			end,
 			offsets = {
 				{
 					filetype = "NvimTree",
 					text = "File Explorer",
 					highlight = "Directory",
-					text_align = "left",
+					text_align = "center",
 				},
 			},
 		}
