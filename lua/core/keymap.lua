@@ -45,3 +45,8 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<C-a>", "gg^vG$<CR>")
 vim.keymap.set("v", "<C-a>", "<Esc>gg^vG$<CR>")
 
+-- return to normal mode in terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", noremap)
+
+-- jump bewteen windows
+vim.keymap.set({ "n", "i", "v" }, "<A-w>", "<C-w><C-w>", noremap)
