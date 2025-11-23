@@ -1,6 +1,6 @@
 
 vim.opt.number         = true  -- line number
-vim.opt.relativenumber = true  -- show line number relative to current line
+vim.opt.relativenumber = false -- show line number relative to current line
 vim.opt.cursorline     = true  -- highlight current line
 
 vim.opt.tabstop        = 4     -- tab size
