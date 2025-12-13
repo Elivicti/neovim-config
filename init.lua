@@ -1,5 +1,3 @@
-vim.g.NVIM_GIT_URL_TYPE = os.getenv("NVIM_GIT_URL_TYPE")
-
 require("core.basic")
 require("core.keymap")
 require("core.lazy")   -- plugin manager

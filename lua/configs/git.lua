@@ -13,7 +13,7 @@ function GitSite:url(repo)
 	return string.format(self.format, repo)
 end
 
-local url_type = string.lower(vim.g.NVIM_GIT_URL_TYPE or "ssh")
+local url_type = string.lower(vim.env.NVIM_GIT_URL_TYPE or "ssh")
 local url_format_table = {
 	ssh = "git@%s.com:",
 	https = "https://%s.com/"
