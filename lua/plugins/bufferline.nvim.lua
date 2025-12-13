@@ -1,9 +1,15 @@
 local diagnostic_icons = {
 	error   = { icon = "", hl = "BufferLineDiagnosticError" },
 	warning = { icon = "", hl = "BufferLineDiagnosticWarn"  },
-	--info    = { icon = "", hl = "BufferLineDiagnosticInfo"  },
-	--hint    = { icon = "󰌶", hl = "BufferLineDiagnosticHint"  }
+	-- info    = { icon = "", hl = "BufferLineDiagnosticInfo"  },
+	-- hint    = { icon = "󰌶", hl = "BufferLineDiagnosticHint"  }
 }
+
+if vim.env.NVIM_USING_BIG_ICON_FONT then
+	for _, value in pairs(diagnostic_icons) do
+		value.icon = value.icon .. " "
+	end
+end
 
 local git_config = require("configs.git")
 
