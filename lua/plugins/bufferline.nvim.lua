@@ -10,6 +10,7 @@ local git_config = require("configs.git")
 return {
 	"akinsho/bufferline.nvim",
 	url = git_config.site.github:url("Elivicti/bufferline.nvim"),
+	branch = "fix-highlighted-strwidth",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
