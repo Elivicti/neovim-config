@@ -50,6 +50,35 @@ return {
 					text_align = "center",
 				},
 			},
+			name_formatter = function(buf)
+				-- buf contains:
+				  -- name                | str        | the basename of the active file
+				  -- path                | str        | the full path of the active file
+				  -- bufnr               | int        | the number of the active buffer
+				  -- buffers (tabs only) | table(int) | the numbers of the buffers in the tab
+				  -- tabnr (tabs only)   | int        | the "handle" of the tab, can be converted to its ordinal number using: `vim.api.nvim_tabpage_get_number(buf.tabnr)`
+				plog(vim.inspect(buf))
+
+				if buf.path:match("oil://") then
+					local dir = require("oil").get_current_dir(buf.bufnr)
+					if dir then
+						local path = dir:gsub("/+$", "")
+						return vim.fn.fnamemodify(path, ":t") .. "/"
+					else
+						return buf.name
+					end
+				end
+			end,
+			get_element_icon = function(element)
+				-- element contains:
+				  -- filetype    | string
+				  -- path        | string
+				  -- extension   | string
+				  -- directory   | string
+				if element.filetype == "oil" then
+					return "\u{f4d4}"
+				end
+			end
 		}
 	},
 	keys = {
