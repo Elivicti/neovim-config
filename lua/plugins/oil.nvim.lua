@@ -46,6 +46,30 @@ return {
 			align_right = true,
 			highlight_hidden = false,
 		},
-	  skip_confirm_for_simple_edits = true,
+		skip_confirm_for_simple_edits = true,
 	},
+	keys = {
+		{
+			"<A-o>",
+			function ()
+				if vim.bo.filetype ~= "oil" and vim.bo.buftype == "" then
+					vim.cmd("Oil")
+				end
+			end,
+			silent = true,
+			desc = "open dired in current file's directory"
+		},
+		{
+			"<A-p>",
+			function ()
+				if vim.bo.filetype ~= "oil" then
+					vim.cmd("edit .")
+				else
+					require("oil").open(vim.fn.getcwd())
+				end
+			end,
+			silent = true,
+			desc = "open dired in current working directory"
+		},
+	}
 }
