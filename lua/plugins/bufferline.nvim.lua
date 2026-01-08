@@ -57,7 +57,6 @@ return {
 				  -- bufnr               | int        | the number of the active buffer
 				  -- buffers (tabs only) | table(int) | the numbers of the buffers in the tab
 				  -- tabnr (tabs only)   | int        | the "handle" of the tab, can be converted to its ordinal number using: `vim.api.nvim_tabpage_get_number(buf.tabnr)`
-				plog(vim.inspect(buf))
 
 				if buf.path:match("oil://") then
 					local dir = require("oil").get_current_dir(buf.bufnr)
