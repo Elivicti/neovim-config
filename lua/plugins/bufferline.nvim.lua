@@ -61,8 +61,7 @@ return {
 				if buf.path:match("oil://") then
 					local dir = require("oil").get_current_dir(buf.bufnr)
 					if dir then
-						local path = dir:gsub("/+$", "")
-						return vim.fn.fnamemodify(path, ":t") .. "/"
+						return vim.fn.fnamemodify(dir, ":h:t") .. "/"
 					else
 						return buf.name
 					end
@@ -74,9 +73,14 @@ return {
 				  -- path        | string
 				  -- extension   | string
 				  -- directory   | string
+				local icon = nil
 				if element.filetype == "oil" then
-					return "\u{f4d4}"
+					icon = "\u{f4d4}"
 				end
+				if icon and vim.env.NVIM_USING_BIG_ICON_FONT then
+					return icon .. " "
+				end
+				return icon
 			end
 		}
 	},
