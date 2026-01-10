@@ -1,8 +1,8 @@
 local diagnostic_icons = {
-	error   = { icon = "", hl = "BufferLineDiagnosticError" },
-	warning = { icon = "", hl = "BufferLineDiagnosticWarn"  },
-	-- info    = { icon = "", hl = "BufferLineDiagnosticInfo"  },
-	-- hint    = { icon = "󰌶", hl = "BufferLineDiagnosticHint"  }
+	error   = { icon = "", hl = "DiagnosticError" },
+	warning = { icon = "", hl = "DiagnosticWarn"  },
+	-- info    = { icon = "", hl = "DiagnosticInfo"  },
+	-- hint    = { icon = "󰌶", hl = "DiagnosticHint"  }
 }
 
 if vim.env.NVIM_USING_BIG_ICON_FONT then
