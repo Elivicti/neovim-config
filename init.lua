@@ -24,3 +24,13 @@ local function set_colorscheme(scheme)
 end
 
 set_colorscheme(color_schemes.tokyonight)
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function ()
+		vim.schedule(function ()
+			if vim.fn.argc() == 0 then
+				vim.cmd("edit .")
+			end
+		end)
+	end
+})
