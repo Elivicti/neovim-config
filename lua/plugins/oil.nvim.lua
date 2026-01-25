@@ -12,11 +12,11 @@ return {
 	opts = {
 		columns = {
 			{ "permissions" },
-			{ "nlink", highlight = "Comment" },
-			{ "owner", highlight = "Identifier" },
-			{ "size",  highlight = "Constant" },
-			{ "mtime", format = "%b %e %Y %H:%M" },
-			{ "icon",  highlight = "Normal" },
+			{ "nlink", align = "right", highlight = "Comment" },
+			{ "owner", align = "right", highlight = "Identifier" },
+			{ "size",  align = "right", highlight = "Constant" },
+			{ "mtime", align = "right", format = "%b %e %Y %H:%M" },
+			{ "icon",  align = "right", highlight = "Normal" },
 		},
 		-- Buffer-local options to use for oil buffers
 		buf_options = {
@@ -43,8 +43,8 @@ return {
 		},
 		view_options = {
 			show_hidden = true,
-			align_right = true,
 			highlight_hidden = false,
+			natural_order = true
 		},
 		skip_confirm_for_simple_edits = true,
 	},
