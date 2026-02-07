@@ -50,3 +50,8 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", noremap)
 
 -- jump bewteen windows
 vim.keymap.set({ "n", "i", "v" }, "<A-w>", "<C-w><C-w>", noremap)
+
+-- copy line and keep cursor position (https://superuser.com/a/1216119)
+vim.keymap.set("n", "zj",    "mz\"yyy\"yP`z",    noremap)
+vim.keymap.set("n", "zk",    "mz\"yyy\"yP`zk",   noremap)
+vim.keymap.set("i", "<C-d>", "<Cmd>norm zj<CR>", noremap)
