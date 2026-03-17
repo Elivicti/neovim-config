@@ -1,8 +1,23 @@
-local git_config = require("configs.git")
+local symbols = {
+	added     = "+",
+	modified  = "~",
+	renamed   = "^",
+	deleted   = "#",
+	copied    = "&",
+	conflict  = "!",
+	untracked = "?",
+	ignored   = ""
+}
 
 return {
-	"benomahony/oil-git.nvim",
+	"malewicz1337/oil-git.nvim",
 	dependencies = { "stevearc/oil.nvim" },
-	url = git_config.site.github:url("Elivicti/oil-git.nvim"),
-	branch = "fix/git-dotfile-detection",
+	opts = {
+		show_ignored_files = true,
+		show_ignored_directories = true,
+		symbols = {
+			file = symbols,
+			directory = symbols,
+		},
+	},
 }
