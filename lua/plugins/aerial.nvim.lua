@@ -1,4 +1,4 @@
-return {
+local spec = {
 	"stevearc/aerial.nvim",
 	lazy = true,
 	cmd = "AerialToggle",
@@ -8,3 +8,12 @@ return {
 	},
 	opts = {},
 }
+
+local version = vim.version()
+if version.minor <= 11 then
+	spec["tag"] = "v3.1.0"
+else
+	spec["branch"] = "main"
+end
+
+return spec
