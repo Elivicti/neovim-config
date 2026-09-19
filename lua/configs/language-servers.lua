@@ -11,8 +11,8 @@ local language_servers = {
 			}
 		}
 	},
-	pyright = {},
-	["cmake-language-server"] = {},
+	basedpyright = {},
+	neocmakelsp = {},
 	clangd = {
 		cmd = {
 			"clangd",
@@ -22,8 +22,6 @@ local language_servers = {
 		},
 		filetypes = { "c", "cpp", "objc", "objcpp" }
 	},
-	["json-lsp"] = {},
-	["bash-language-server"] = {},
 }
 
 local has_opt, opt_ls = pcall(require, "configs.language-servers-opt")
