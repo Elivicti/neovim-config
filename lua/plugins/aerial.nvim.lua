@@ -11,9 +11,9 @@ local spec = {
 
 local version = vim.version()
 if version.minor <= 11 then
-	spec["tag"] = "v3.1.0"
+	spec["branch"] = "nvim-0." .. version.minor
 else
-	spec["branch"] = "main"
+	spec["branch"] = "master"
 end
 
 return spec
