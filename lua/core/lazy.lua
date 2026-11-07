@@ -27,6 +27,7 @@ local lockfile = string.format("lazy-lock-v%d.%d.json", version.major, version.m
 require("lazy").setup({
 	lockfile = vim.fn.stdpath("config") .. "/" .. lockfile,
 	spec = {
+		{ "folke/lazy.nvim", tag = "stable" },
 		{ import = "plugins" }
 	},
 	git = {
