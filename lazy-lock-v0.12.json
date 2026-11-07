@@ -1,5 +1,5 @@
 {
-  "aerial.nvim": { "branch": "master", "commit": "645d108a5242ec7b378cbe643eb6d04d4223f034" },
+  "aerial.nvim": { "branch": "master", "commit": "28fe6e822ae344544c379d60fcb13c9519a1f08a" },
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "bufferline.nvim": { "branch": "fix-highlighted-strwidth", "commit": "a2b6081732244d2337500d1771dc06244486a7b5" },
   "cmake-tools.nvim": { "branch": "master", "commit": "782a254c62a61af1d4febddd0d6dbc5ea414a027" },
@@ -15,7 +15,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "993d048db0d83d8e8ba3f9cb376456321acdcce3" },
   "nvim-origami": { "branch": "main", "commit": "a137d35eaabb7cd7be89228229c1aa5b057f5ed7" },
   "nvim-surround": { "branch": "main", "commit": "8b47db616ef658b8fc27e61db2896aa2f40134de" },
-  "nvim-tree.lua": { "branch": "master", "commit": "4cb123287efe9a7191cce287a005d4a9c8bed4a0" },
+  "nvim-tree.lua": { "branch": "master", "commit": "7e1da84aaffb413e1fa47b3895e5caa12501142d" },
   "nvim-treesitter": { "branch": "main", "commit": "915f2bd3d4e2a33704bfc476b5137e9befa82f3d" },
   "nvim-web-devicons": { "branch": "master", "commit": "0dc0cfb0c6858041174a53c7aa4adaf65e994b3c" },
   "oil-git.nvim": { "branch": "main", "commit": "8bab14df0b7db7a62fa75c8978d6181daed2f0a2" },
