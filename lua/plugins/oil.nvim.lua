@@ -43,8 +43,19 @@ return {
 		},
 		view_options = {
 			show_hidden = true,
+			show_dotdot = true,
 			highlight_hidden = false,
-			natural_order = true
+			natural_order = true,
+			hidden_highlight = {
+				file = "OilFile",
+				directory = "OilDir",
+				socket = "OilSocketHidden",
+				link = "OilLinkHidden",
+				link_target = "OilLinkTargetHidden",
+				orphan_link = "OilOrphanLinkHidden",
+				orphan_link_target = "OilOrphanLinkTargetHidden",
+			},
+
 		},
 		skip_confirm_for_simple_edits = true,
 	},

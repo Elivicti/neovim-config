@@ -19,7 +19,7 @@
   "nvim-treesitter": { "branch": "main", "commit": "915f2bd3d4e2a33704bfc476b5137e9befa82f3d" },
   "nvim-web-devicons": { "branch": "master", "commit": "0dc0cfb0c6858041174a53c7aa4adaf65e994b3c" },
   "oil-git.nvim": { "branch": "main", "commit": "8bab14df0b7db7a62fa75c8978d6181daed2f0a2" },
-  "oil.nvim": { "branch": "feat/dired-alike", "commit": "fd045fbc4df1b4f5b7051dca47a95a73253493f5" },
+  "oil.nvim": { "branch": "feat/dired-alike", "commit": "c20f23f2ae362a7781cc394ab0b438a669aa9380" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "65734f76783705255d9ede8a6e4692e1572801a5" },
   "telescope.nvim": { "branch": "master", "commit": "5255aa27c422de944791318024167ad5d40aad20" },
