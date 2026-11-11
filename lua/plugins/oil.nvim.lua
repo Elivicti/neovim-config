@@ -14,6 +14,7 @@ return {
 			{ "permissions" },
 			{ "nlink", align = "right", highlight = "Comment" },
 			{ "owner", align = "right", highlight = "Identifier" },
+			{ "group", align = "right", highlight = "Identifier" },
 			{ "size",  align = "right", highlight = "Constant" },
 			{ "mtime", align = "right", format = "%b %e %Y %H:%M" },
 			{ "icon",  align = "right", highlight = "Normal" },
