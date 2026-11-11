@@ -3,6 +3,7 @@ return {
 	config = true,
 	event = "ModeChanged *:[vV\22]",
 	opts = {
+		ignore = { filetypes = { "oil" } },
 		list_chars = {
 			space = "·",
 			tab = "▸",
